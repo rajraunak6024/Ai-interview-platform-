@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const connectDB = require("./config/db.js");
 const testRoutes = require("./routes/testRoutes.js");
-
+const authRoutes = require("./routes/authRoutes");
 const app=express();
 connectDB();
 
@@ -17,9 +17,11 @@ app.get("/api/v1/",(req,res)=>{
 });
 
 app.use("/api/test",testRoutes);
+app.use("/api/auth", authRoutes);
 
 const port=process.env.PORT;
 
 app.listen(port,()=>{
       console.log(`server is listining at http://localhost:${port}`);
 }); 
+
