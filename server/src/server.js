@@ -10,7 +10,6 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
-
 app.get("/api/v1/",(req,res)=>{
     res.json({status:"ok",message:"server is running"});
 
