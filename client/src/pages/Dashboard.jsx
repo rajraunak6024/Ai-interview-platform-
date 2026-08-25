@@ -1,0 +1,14 @@
+import { useAuth } from "../context/AuthContext";
+
+function Dashboard() {
+  const { user, logout } = useAuth();
+  return (
+    <div style={{ padding: 40, fontFamily: "sans-serif" }}>
+      <h1>Dashboard</h1>
+      <p>Welcome, {user?.name}</p>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
+}
+
+export default Dashboard;
