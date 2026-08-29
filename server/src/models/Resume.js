@@ -7,6 +7,7 @@ const resumeSchema = new mongoose.Schema(
         originalFileName:{type:String,required:true},
         filePath: {type:String, required: true},
         extractedText: { type: String },
+        parsedData : {type: mongoose.Schema.Types.Mixed},
     },
     {timestamps: true}
 );
