@@ -18,7 +18,9 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "application/pdf") {
+  const isPdfMime = file.mimetype === "application/pdf";
+  const isPdfExtension = file.originalname.toLowerCase().endsWith(".pdf");
+  if (isPdfMime || isPdfExtension) {
     cb(null, true);
   } else {
     cb(new Error("Only PDF files are allowed"), false);
