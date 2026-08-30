@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import ResumeUpload from "./pages/ResumeUpload";
 
 function App() {
   return (
@@ -20,6 +21,14 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+           path="/resume-upload"
+           element={
+         <ProtectedRoute>
+            <ResumeUpload />
+         </ProtectedRoute>
+  }
+/>
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
